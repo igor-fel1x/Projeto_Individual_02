@@ -1,0 +1,94 @@
+.container {
+  width: 100%; 
+  min-height: calc(100vh - 80px); 
+  padding: 3rem; 
+  background-color: #ffffff; 
+  color: #1e293b;
+}
+
+.cabecalho {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #e2e8f0; /* Borda mais suave e moderna */
+  padding-bottom: 1rem;
+}
+
+.cabecalho h2 {
+  margin: 0 0 0.5rem 0;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.cabecalho p {
+  margin: 0;
+  color: #475569; /* Mesmo cinza secundário da outra tela */
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px; /* Trava a largura para os inputs não ficarem esticados no monitor inteiro */
+}
+
+.linhaDupla {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.linhaDupla .grupoInput {
+  flex: 1; 
+}
+
+.grupoInput {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.grupoInput label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #161717; /* Mesmo padrão de cor e tamanho do label de busca */
+}
+
+.grupoInput input,
+.grupoInput select {
+  padding: 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #334155;
+  background-color: #f8fafc;
+  transition: all 0.2s ease;
+}
+
+/* Efeito de foco idêntico ao da tela de busca */
+.grupoInput input:focus,
+.grupoInput select:focus {
+  outline: none;
+  border-color: #2563eb;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.botaoSalvar {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #2563eb; /* Azul primário (CTA) */
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+  transition: all 0.2s ease;
+  align-self: flex-start; /* Impede que o botão ocupe 100% da largura da tela, deixando-o compacto */
+}
+
+/* Efeito de hover idêntico ao botaoFiltro */
+.botaoSalvar:hover {
+  background-color: #1d4ed8;
+  box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
+  transform: translateY(-1px);
+}
