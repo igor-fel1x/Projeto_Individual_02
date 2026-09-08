@@ -1,0 +1,82 @@
+.container {
+  width: 100%; 
+  min-height: calc(100vh - 80px); 
+  padding: 3rem; 
+  background-color: #f6f6f6; 
+  color: #333;
+}
+
+.cabecalho {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+}
+
+.cabecalho h2 {
+  margin: 0 0 0.5rem 0;
+  color: #1a1a1a;
+}
+
+.cabecalho p {
+  margin: 0;
+  color: #666;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.linhaDupla {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.linhaDupla .grupoInput {
+  flex: 1; 
+}
+
+.grupoInput {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.grupoInput label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.grupoInput input,
+.grupoInput select {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.grupoInput input:focus,
+.grupoInput select:focus {
+  border-color: #007bff; 
+}
+
+.botaoSalvar {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.botaoSalvar:hover {
+  background-color: #0056b3;
+}
