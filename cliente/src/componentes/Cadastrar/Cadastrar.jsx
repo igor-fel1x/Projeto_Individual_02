@@ -3,7 +3,6 @@ import styles from './Cadastrar.module.css';
 
 function Cadastro() {
 
-  // 1. Um estado individual para cada campo
   const [titulo, setTitulo] = useState('');
   const [tipo, setTipo] = useState('');
   const [valor, setValor] = useState('');
@@ -12,7 +11,6 @@ function Cadastro() {
   const [bairro, setBairro] = useState('');
 
   const criarImovel = async function() {
-    // 2. Agrupamos os estados individuais em um único objeto antes de enviar
     const imovel = {
       titulo: titulo,
       tipo: tipo,
@@ -40,7 +38,7 @@ function Cadastro() {
         setQuartos('');
         setMetragem('');
         setBairro('');
-        
+
       } else {
         alert("Erro ao cadastrar imóvel");
       }
@@ -53,14 +51,13 @@ function Cadastro() {
     <div className={styles.container}>
       <div className={styles.cabecalho}>
         <h2>Cadastrar Novo Imóvel</h2>
-        <p>Preencha os dados abaixo para anunciar na plataforma.</p>
       </div>
 
       <div className={styles.formulario}>
         
         <div className={styles.linhaDupla}>
           <div className={styles.grupoInput}>
-            <label>Título do Anúncio</label>
+            <h4>Título do Anúncio</h4>
             <input 
               type="text" 
               name="titulo" 
@@ -70,7 +67,7 @@ function Cadastro() {
             />
           </div>
           <div className={styles.grupoInput}>
-            <label>Tipo de Imóvel</label>
+            <h4>Tipo de Imóvel</h4>
             <select name="tipo" value={tipo} onChange={(e) => setTipo(e.target.value)}>
               <option value="">Selecione</option>
               <option value="apartamento">Apartamento</option>
@@ -81,7 +78,7 @@ function Cadastro() {
 
         <div className={styles.linhaDupla}>
           <div className={styles.grupoInput}>
-            <label>Valor (R$)</label>
+            <h4>Valor (R$)</h4>
             <input 
               type="number" 
               name="valor" 
@@ -90,7 +87,7 @@ function Cadastro() {
             />
           </div>
           <div className={styles.grupoInput}>
-            <label>Quartos</label>
+            <h4>Quartos</h4>
             <input 
               type="number" 
               name="quartos" 
@@ -102,7 +99,7 @@ function Cadastro() {
 
         <div className={styles.linhaDupla}>
           <div className={styles.grupoInput}>
-            <label>Metragem (m²)</label>
+            <h4>Metragem (m²)</h4>
             <input 
               type="number" 
               name="metragem" 
@@ -111,7 +108,7 @@ function Cadastro() {
             />
           </div>
           <div className={styles.grupoInput}>
-            <label>Bairro</label>
+            <h4>Bairro</h4>
             <input 
               type="text" 
               name="bairro" 

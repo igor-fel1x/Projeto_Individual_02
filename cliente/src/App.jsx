@@ -4,16 +4,20 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 // import './App.css'
 import Navbar from './componentes/Navbar/Navbar'
-import TelaImobiliaria from './componentes/Cadastrar/Cadastrar'
 import Cadastro from './componentes/Cadastrar/Cadastrar'
 import Buscar from './componentes/Buscar/Buscar'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
-     <Navbar/>
-     <Cadastro/>  
-    </div>
+    <BrowserRouter>
+      <Navbar /> 
+      
+      <Routes>
+        <Route path="/" element={<Buscar />} />
+        <Route path="/cadastrar" element={<Cadastro />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
