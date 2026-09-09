@@ -1,5 +1,11 @@
 import styles from './Navbar.module.css';
 
+
+
+function alterar(){
+window.location.href="./"
+}
+
 function Navbar() {
   return (
     <nav className={styles.navbar}>
@@ -8,7 +14,7 @@ function Navbar() {
       </div>
       
       <div className={styles.links}>
-        <button className={styles.navLink} >
+        <button onClick={alterar} className={styles.navLink} >
           Cadastrar
           </button>
         <button className={styles.navLink}>
