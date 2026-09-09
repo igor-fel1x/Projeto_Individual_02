@@ -24,7 +24,7 @@ private JdbcTemplate jdbcTemplate;
     @PostMapping
     public ResponseEntity<Imobiliaria> criarJogo(@RequestBody Imobiliaria imovel) {
 
-        if (imovel.getNome() == null || imovel.getNome().isBlank()) {
+        if (imovel.getTitulo() == null || imovel.getTitulo().isBlank()) {
             return ResponseEntity.status(400).build();
         }
 
@@ -36,15 +36,17 @@ private JdbcTemplate jdbcTemplate;
             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, imovel.getTitulo());
             ps.setString(2, imovel.getTipo());
-            ps.setInt(2, imovel.getValor());
-            ps.setInt(2, imovel.getQuartos());
-            ps.setDouble(2, imovel.getMetragem());
-            ps.setString(2, imovel.getBairro());
+            ps.setInt(3, imovel.getValor());
+            ps.setInt(4, imovel.getQuartos());
+            ps.setDouble(5, imovel.getMetragem());
+            ps.setString(6, imovel.getBairro());
             return ps;
         }, keyHolder);
 
-        Integer idInserido = keyHolder.getKeyAs(Integer.class);
-        imovel.setId(idInserido);
+        Number idInserido = keyHolder.getKey();
+        if (idInserido != null) {
+            imovel.setId(idInserido.intValue());
+        }
         return ResponseEntity.status(201).body(imovel);
     }
 
