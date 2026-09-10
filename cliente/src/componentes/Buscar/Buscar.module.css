@@ -131,7 +131,7 @@
 }
 
 .info h4, .info p {
-  margin: 0; /* Remove as margens originais do navegador para não entortar o alinhamento */
+  margin: 0; 
   font-size: 1rem;
 }
 
