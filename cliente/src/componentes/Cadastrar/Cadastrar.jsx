@@ -27,7 +27,7 @@ function Cadastro() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({Imovel: imovel})
+        body: JSON.stringify(imovel)
       });
 
       if (resposta.status === 201) {
@@ -62,8 +62,7 @@ function Cadastro() {
               type="text" 
               name="titulo" 
               value={titulo} 
-              onChange={(e) => setTitulo(e.target.value)} 
-              placeholder="Ex: Apartamento Moderno" 
+              onChange={(e) => setTitulo(e.target.value)}  
             />
           </div>
           <div className={styles.grupoInput}>
