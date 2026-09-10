@@ -1,4 +1,4 @@
-# Projeto Imobiliária - API REST & Cliente Web
+# Projeto Imobiliária 
 
 ## Tecnologias Utilizadas
 * **Front-end:** React, React Router DOM, CSS Modules.
@@ -24,7 +24,7 @@
 * Instale as dependências com `npm install`.
 * Inicie o projeto com `npm run dev`.
 
-## 🔗 Endpoints da API (Rotas)
+## Endpoints da API (Rotas)
 
 
 * `POST /imobiliaria` - Cadastra um novo imóvel.
