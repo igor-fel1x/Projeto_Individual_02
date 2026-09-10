@@ -62,6 +62,25 @@ function Buscar() {
     }
   };
 
+  const deletarImovel = async function(id) {
+   
+    try {
+      const resposta = await fetch(`http://localhost:8080/imobiliaria/${id}`, {
+        method: 'DELETE'
+      });
+      
+      if (resposta.status === 204 || resposta.status === 200) {
+        alert("Imóvel excluído com sucesso!");
+        
+        setImoveis(imoveis.filter(imovel => imovel.id !== id));
+      } else {
+        alert("Erro ao excluir o imóvel.");
+      }
+    } catch (erro) {
+      console.log("Falhou ao deletar:", erro.message);
+    }
+  };
+
   return (
     <div className={styles.painel}>
       <h2>Buscar Imóveis</h2>
@@ -134,10 +153,16 @@ function Buscar() {
           {imoveis !== null && imoveis.length > 0 && (
             imoveis.map((imovel) => (
               <div key={imovel.id} className={styles.card}>
+                <div>
                 <h4>{imovel.titulo}</h4>
-                <p>{imovel.tipo} • {imovel.quartos} quartos</p>
-                <p><strong>R$ {imovel.valor}</strong></p>
+                <p>{imovel.tipo} - {imovel.quartos} quartos</p>
+                <p>R$ {imovel.valor}</p>
                 <p>{imovel.metragem}m² - {imovel.bairro}</p>
+                </div>
+                <button 
+                  className={styles.botaoExcluir}
+                  onClick={() => deletarImovel(imovel.id)}
+                > Excluir </button>
               </div>
             ))
           )}
