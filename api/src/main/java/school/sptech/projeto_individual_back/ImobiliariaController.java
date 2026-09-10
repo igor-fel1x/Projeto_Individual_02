@@ -98,4 +98,17 @@ public class ImobiliariaController {
         }
         return ResponseEntity.status(200).body(imoveis);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletarImovel(@PathVariable Integer id) {
+        String sql = "DELETE FROM imovel WHERE id = ?";
+
+        int linhasAfetadas = jdbcTemplate.update(sql, id);
+
+        if (linhasAfetadas == 0) {
+            return ResponseEntity.status(404).build();
+        }
+
+        return ResponseEntity.status(204).build();
+    }
 }
